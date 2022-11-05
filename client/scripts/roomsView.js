@@ -17,12 +17,15 @@ var RoomsView = {
     for (var roomkey in Rooms._data) {
       RoomsView.renderRoom(roomkey);
     }
-    RoomsView.$select.value = Rooms.currentRoom;
   },
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
     RoomsView.$select.append(this.html({ roomname: roomname }));
+  },
+
+  add: function (roomname) {
+    RoomsView.renderRoom(roomname);
   },
 
   handleChange: function(event) {

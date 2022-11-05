@@ -13,7 +13,6 @@ var Rooms = {
         Rooms._data[message.roomname] = true;
       }
     }
-    Rooms.currentRoom = Rooms._data[0];
     callback();
   },
 

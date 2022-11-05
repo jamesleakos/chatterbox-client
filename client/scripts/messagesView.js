@@ -12,7 +12,9 @@ var MessagesView = {
   render: function() {
     MessagesView.$chats.html('');
     for(var message of Messages._data) {
-      MessagesView.renderMessage(message);
+      if (message.roomname === Rooms.currentRoom) {
+        MessagesView.renderMessage(message);
+      }
     }
   },
 
