@@ -6,14 +6,15 @@ var Rooms = {
 
   // TODO: Define how you want to store the list of rooms
   _data: {},
-  currentRoom : "",
-  loadRooms: function(messages) {
+  currentRoom: 'James Room',
+  loadRooms: function(messages, callback) {
     for (let message of messages) {
       if (!Rooms._data[message.roomname]) {
         Rooms._data[message.roomname] = true;
       }
     }
     Rooms.currentRoom = Rooms._data[0];
+    callback();
   },
 
   add: function(roomname) {

@@ -10,8 +10,9 @@ var MessagesView = {
   },
 
   render: function() {
+    MessagesView.$chats.html('');
     for(var message of Messages._data) {
-      this.renderMessage(message);
+      MessagesView.renderMessage(message);
     }
   },
 
@@ -23,7 +24,7 @@ var MessagesView = {
     //   escape:/\{\{-(.+?)\}\}/g
     // }
     //console.log('rendering message: ' + message.text);
-    $('#chats').append(MessageView.render({
+    MessagesView.$chats.append(MessageView.render({
       username: message.username,
       message: message.text,
       roomname: 'room: ' + message.roomname
@@ -36,13 +37,13 @@ var MessagesView = {
   handleClick: function(event) {
     // TODO: handle a user clicking on a message
     // (this should add the sender to the user's friend list).
-    Friends.toggleStatus(event.currentTarget.innerHTML)
+    Friends.toggleStatus(event.currentTarget.innerHTML);
     console.log('click');
     // console.log($(event.currentTarget).children('.username')[0].innerHTML);
 
 
   }
-}
+};
 // var template = _.template("<b><%- value %></b>");
 // template({value: '<script>'});
 // => "<b>&lt;script&gt;</b>"

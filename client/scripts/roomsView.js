@@ -14,8 +14,8 @@ var RoomsView = {
   render: function() {
     // TODO: Render out the list of rooms.
     RoomsView.$select.html('');
-    for(var roomkey in Rooms._data) {
-      this.renderRoom(roomkey);
+    for (var roomkey in Rooms._data) {
+      RoomsView.renderRoom(roomkey);
     }
     RoomsView.$select.value = Rooms.currentRoom;
   },

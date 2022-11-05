@@ -6,8 +6,9 @@ var Messages = {
 
   // TODO: Define how you want to store your messages.
   _data: null,
-  loadMessages: function (messages) {
+  loadMessages: function (messages, callback) {
     this._data = messages;
+    callback();
   }
 
   // TODO: Define methods which allow you to retrieve from,
